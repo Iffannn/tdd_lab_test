@@ -13,3 +13,8 @@ def test_callname():
     response = client.get("/callname/john")
     assert response.status_code == 200
     assert response.json() == {"hello": "john"}
+    
+def test_callname():
+    response = client.post("/callname", data={"name": "john"})
+    assert response.status_code == 200
+    assert response.json() == {"hello": "john"}
